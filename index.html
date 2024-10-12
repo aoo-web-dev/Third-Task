@@ -1,0 +1,354 @@
+<!doctype html>
+<html class="w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/build.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Third Task</title>
+  </head>
+
+  <body class="h-vh mx-auto w-full bg-gray-100 font-sans dark:bg-black">
+    <header
+      class="fixed top-0 z-20 w-full bg-white drop-shadow dark:border-b dark:bg-black"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between px-20 py-6"
+      >
+        <strong class="text-2xl font-extrabold dark:text-white"
+          >Where in the world?</strong
+        >
+        <button
+          id="button"
+          class="flex items-center gap-x-2 text-base font-semibold text-black dark:bg-black dark:text-white"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M13.5532 13.815C9.66857 13.815 6.51929 10.9278 6.51929 7.36821C6.51929 6.0253 6.96679 4.78158 7.73143 3.75C4.69036 4.69515 2.5 7.33122 2.5 10.4381C2.5 14.3385 5.94929 17.5 10.2036 17.5C13.5929 17.5 16.4696 15.4932 17.5 12.7045C16.375 13.4048 15.0161 13.815 13.5532 13.815Z"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1.25"
+            />
+          </svg>
+
+          Dark Mode
+        </button>
+      </div>
+    </header>
+    <section class="mt-20 h-dvh w-full dark:bg-black">
+      <div class="container mx-auto px-20 py-12">
+        <div class="flex items-center justify-between">
+          <div class="relative h-14 w-[480px] rounded-[5px] drop-shadow">
+            <svg
+              class="absolute left-8 top-[19px]"
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="search">
+                <path
+                  id="icon-search-black"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.5 11H11.7L11.4 10.7C12.4 9.6 13 8.1 13 6.5C13 2.9 10.1 0 6.5 0C2.9 0 0 2.9 0 6.5C0 10.1 2.9 13 6.5 13C8.1 13 9.6 12.4 10.7 11.4L11 11.7V12.5L16 17.5L17.5 16L12.5 11ZM6.5 11C4 11 2 9 2 6.5C2 4 4 2 6.5 2C9 2 11 4 11 6.5C11 9 9 11 6.5 11Z"
+                  fill="#848484"
+                />
+              </g>
+            </svg>
+
+            <input
+              class="h-14 w-[480px] rounded-[5px] px-[74px] text-gray-400 focus:outline-gray-300 dark:border dark:border-white dark:bg-black dark:text-white"
+              type="search"
+              placeholder="Search for a country…"
+              maxlength="100"
+            />
+          </div>
+          <div id="dropdownButton" class="relative flex flex-col gap-y-1">
+            <div
+              onclick="toggleDropdown()"
+              class="flex h-14 w-[200px] cursor-pointer items-center justify-between rounded-[5px] bg-white py-5 pl-6 pr-[18px] drop-shadow dark:border dark:border-white dark:bg-black"
+            >
+              <p class="text-sm font-normal text-black dark:text-white">
+                Filter by Region
+              </p>
+              <svg
+                class="text-black dark:text-white"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M9.45 3.45L6 6.9L2.55 3.45L1.5 4.5L6 9L10.5 4.5L9.45 3.45Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <div
+              id="dropdown"
+              class="absolute top-16 z-10 hidden w-[200px] rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+            >
+              <ul class="flex flex-col gap-y-2">
+                <li
+                  class="cursor-pointer rounded-t-[5px] px-6 py-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                >
+                  <a class="text-sm font-normal dark:text-white" href="#"
+                    >Africa</a
+                  >
+                </li>
+                <li
+                  class="cursor-pointer px-6 py-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                >
+                  <a class="text-sm font-normal dark:text-white" href="#"
+                    >America</a
+                  >
+                </li>
+                <li
+                  class="cursor-pointer px-6 py-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                >
+                  <a class="text-sm font-normal dark:text-white" href="#"
+                    >Asia</a
+                  >
+                </li>
+                <li
+                  class="cursor-pointer px-6 py-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                >
+                  <a class="text-sm font-normal dark:text-white" href="#"
+                    >Europe</a
+                  >
+                </li>
+                <li
+                  class="cursor-pointer rounded-b-[5px] px-6 py-4 hover:bg-gray-200 dark:hover:bg-gray-700"
+                >
+                  <a class="text-sm font-normal dark:text-white" href="#"
+                    >Oceania</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 flex justify-between">
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-germany.png"
+              alt="Flag of Germany Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Germany</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">81,770,900</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Europe</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital: <span class="text-sm font-light">Berlin</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-usa.png"
+              alt="Flag of America Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-5 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold"
+                >United States of America</strong
+              >
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">323,947,000</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Americas</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital:
+                <span class="text-sm font-light">Washington, D.C.</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-brazil.png"
+              alt="Flag of Brazil Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Brazil</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">206,135,893</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Americas</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital: <span class="text-sm font-light">Brasília</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-iceland.png"
+              alt="Flag of Iceland Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Iceland</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">334,300</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Europe</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital: <span class="text-sm font-light">Reykjavík</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-[75px] flex justify-between">
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-afghanistan.png"
+              alt="Flag of Afghanistan Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Afghanistan</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">27,657,145</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Asia</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital: <span class="text-sm font-light">Kabul</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-aland-island.png"
+              alt="Flag of Åland Islands Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Åland Islands</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">28,875</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Europe</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital:
+                <span class="text-sm font-light">Mariehamn</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-albania.png"
+              alt="Flag of Albania Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Albania</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">2,886,026</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Europe</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital: <span class="text-sm font-light">Tirana</span>
+              </p>
+            </div>
+          </div>
+          <div
+            class="inline-block rounded-[5px] bg-white drop-shadow dark:border dark:border-white dark:bg-black"
+          >
+            <img
+              src="./images/flag-algeria.png"
+              alt="Flag of Algeria Image"
+              width="264"
+              height="160"
+            />
+            <div
+              class="flex flex-col gap-y-2 px-6 pb-[46px] pt-6 dark:text-white"
+            >
+              <strong class="text-lg font-extrabold">Algeria</strong>
+              <p class="text-sm font-semibold">
+                Population: <span class="text-sm font-light">40,400,000</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Region: <span class="text-sm font-light">Africa</span>
+              </p>
+              <p class="text-sm font-semibold">
+                Capital: <span class="text-sm font-light">Algiers</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

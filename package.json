@@ -1,0 +1,14 @@
+{
+  "devDependencies": {
+    "init": "^0.1.2",
+    "npx": "^10.2.2",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.13"
+  },
+  "scripts": {
+    "fn31": "npx tailwindcss -i ./css/style.css -o ./css/index.css --watch",
+    "build": "npx tailwindcss -o ./css/build.css --minify",
+    "node": "npm install -D tailwindcss npx tailwindcss init"
+  }
+}
